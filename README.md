@@ -1,3 +1,22 @@
+# Hit counter with KV Store on Fastly Compute
+
+This starter kit sets up a basic page hit counter for a website using a KV Store in a Fastly Compute app in JavaScript.
+
+* The app uses a default backend `glitchdotcom.github.io` with the sample site at `/my-site/`: [glitchdotcom.github.io/my-site/](https://glitchdotcom.github.io/my-site/)
+  * The sample site is a clone of the Eleventy base blog
+* The app uses [Expressly](https://expressly.edgecompute.app/) for routing requests
+* We create a KV Store named `pagehits` on first run – it's listed in the `fastly.toml` file along with the backend
+* Each page request increments the number of hits in the store
+* The `/stats` page returns a list of the pages and their hits
+
+You can use this starter kit out of the box with the default backend, or you can use your own website by changing it in the `fastly.toml` section `[setup.backends.blog]` __before you deploy the app for the first time__ (otherwise you need to update the backend address via the Fastly CLI)
+
+⏲️ _Stay tuned for more including a tutorial series on using this starter kit..._
+
+This repo is cloned from the [default starter kit for Expressly](https://github.com/fastly/compute-starter-kit-javascript-expressly):
+
+___
+
 # Default Starter Kit for Expressly
 
 [![Deploy to Fastly](https://deploy.edgecompute.app/button)](https://deploy.edgecompute.app/deploy)
