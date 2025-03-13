@@ -30,12 +30,12 @@ router.get(`${root}stats`, async (req, res) => {
     Let's turn the list of keys into an array with the values like this:
     [{ page: "/", hits: 3 }, ...]
   */
-  let hitList = _.map(postList.list, h => { return { page: h } }); 
-  hitList = _.filter(hitList, h => { return h.page.endsWith("/") }); //we only want pages ending /
-  for (const pst of hitList) {
-      let hits = await store.get(pst.page);
+  postList = _.filter(postList.list, h => { return h.endsWith("/") }); //we only want pages ending /
+  let hitList = [];
+  for (const pst of postList) {
+      let hits = await store.get(pst);
       let num = await hits.text();
-      pst.hits = parseInt(num);
+      hitList.push({ page: pst, hits: parseInt(num)});
   }
   hitList = _.orderBy(hitList, 'hits', 'desc'); //let's order the list by hits to include in the page
   for (const pst of hitList)
