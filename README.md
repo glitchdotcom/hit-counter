@@ -11,8 +11,6 @@ This starter kit sets up a basic page hit counter for a website using a KV Store
 
 You can use this starter kit out of the box with the default backend, or you can use your own website by changing it in the `fastly.toml` section `[setup.backends.blog]` and changing the `root` variable in the `src/index.js` file __before you deploy the app for the first time__ (otherwise you need to update the backend address via the Fastly CLI).
 
-[![Deploy to Fastly](https://deploy.edgecompute.app/button)](https://deploy.edgecompute.app/deploy)
-
 ⏲️ _Stay tuned for more including a tutorial series on using this starter kit..._
 
 > This repo is cloned from the [default starter kit for Expressly](https://github.com/fastly/compute-starter-kit-javascript-expressly).
