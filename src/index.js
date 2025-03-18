@@ -43,6 +43,9 @@ router.get(`${root}stats`, async (req, res) => {
   res.withStatus(backendResponse.status).html(getPage("Page hits 📈📊🚀", totals));
 });
 
+// 🚧 Add any other routes you want to handle here 🚧
+// If you're following the tutorial in the Fastly docs, add your feed.json route here
+
 // Default response for all other routes
 router.all("(.*)", async (req, res) => {
   await incrementCount(req.path);
