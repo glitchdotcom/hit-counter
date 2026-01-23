@@ -2,8 +2,8 @@
 
 This starter kit sets up a basic page hit counter for a website using a KV Store in a Fastly Compute app written in JavaScript.
 
-* The app uses a default origin website as its backend `glitchdotcom.github.io` with the sample site at `/my-site/`: [glitchdotcom.github.io/my-site/](https://glitchdotcom.github.io/my-site/)
-  * The sample site is a variant of the [Eleventy Base Blog](https://demo-base-blog.11ty.dev/) which you can also [clone and deploy to Github Pages](https://github.com/glitchdotcom/my-site) if you like – **update the `package.json` mentions of `my-site` to your repo name in your clone**
+* The app uses a default origin website as its backend `fastly.github.io` with the sample site at `/my-site/`: [fastly.github.io/my-site/](https://fastly.github.io/my-site/)
+  * The sample site is a variant of the [Eleventy Base Blog](https://demo-base-blog.11ty.dev/) which you can also [clone and deploy to Github Pages](https://github.com/fastly/my-site) if you like – **update the `package.json` mentions of `my-site` to your repo name in your clone**
 * The app uses [Expressly](https://expressly.edgecompute.app/) for routing requests with the [Fastly JavaScript Compute SDK](https://js-compute-reference-docs.edgecompute.app/docs/)
 * We create a KV Store named `pagehits` 
 * Each page request increments the number of hits in the store
@@ -34,7 +34,7 @@ npm install @fastly/cli
 Start a new Compute project using this app as a template:
 
 ```
-fastly compute init --from=https://github.com/glitchdotcom/hit-counter/
+fastly compute init --from=https://github.com/fastly/hit-counter/
 ```
 
 > 💡 Include the flag `--accept-defaults` if you don't want to choose all the details.
@@ -45,7 +45,7 @@ Create an environment variable named `FASTLY_API_TOKEN` and set the token you co
 
 > 💡 You can [authenticate in other ways](https://www.fastly.com/documentation/reference/tools/cli/#configuring), like including your token with the commands as `--token` or creating a profile. 
 
-By default the edge app will use `glitchdotcom.github.io` as its origin, but you can change it to use your own site if you like:
+By default the edge app will use `fastly.github.io` as its origin, but you can change it to use your own site if you like:
 
 * In the `fastly.toml` file, change the `backend` address to your domain
 * In `src/index.js` change the `root` variable to the path for your site or "/"
