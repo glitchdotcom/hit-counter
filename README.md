@@ -62,8 +62,7 @@ fastly compute publish
 
 Your terminal will output the address of your new Compute app – make sure you open the path set as `root` in `src/index.js` which is `my-site` by default.
 
-* Open a few pages then check out your stats page at `your-project.edgecompute.app/my-site/stats/` changing `my-site` if you used a different root
-  * Example: [11ty-feed-hits.edgecompute.app/my-site/stats/](https://11ty-feed-hits.edgecompute.app/my-site/stats/)
+* Open a few pages then check out your stats page at `your-project.edgecompute.app/my-site/stats/` changing `my-site` if you used a different root.
 
 ## 3. Edit your code 
 
