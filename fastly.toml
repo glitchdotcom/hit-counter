@@ -16,7 +16,7 @@ name = "hit-counter"
   [setup.backends]
 
     [setup.backends.blog]
-      address = "glitchdotcom.github.io"
+      address = "fastly.github.io"
 
   [setup.kv_stores]
 
